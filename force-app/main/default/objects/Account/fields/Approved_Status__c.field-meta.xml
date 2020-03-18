@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Approved Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>lock</fullName>
+                <default>false</default>
+                <label>lock</label>
+            </value>
+            <value>
+                <fullName>unlock</fullName>
+                <default>false</default>
+                <label>unlock</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

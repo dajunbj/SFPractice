@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>A01_StoreMonthlySalesControl</members>
+        <members>A01_StoreMonthlySalesCsvControl</members>
+        <members>A01_StoreMonthlySalesPdfControl</members>
+        <members>A01_StoreMonthlySalesDetailControl	</members>
+        <name>ApexClass</name>
+    </types>
+
+
+    <types>  
+        <members>Account</members>  
+        <members>A01_Store__c</members>
+        <members>A01_MonthlySales__c</members>
+        <members>A01_DaylySales__c</members>
+        <members>A01_Prefecture__c</members>
+        <name>CustomObject</name>  
+    </types>  
+    <!--
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    -->
+    <version>47.0</version>
+</Package>
