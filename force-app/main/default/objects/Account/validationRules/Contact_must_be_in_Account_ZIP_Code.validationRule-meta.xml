@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_must_be_in_Account_ZIP_Code</fullName>
+    <active>true</active>
+    <errorConditionFormula>MailingPostalCode__c &lt;&gt;  ShippingPostalCode__c</errorConditionFormula>
+    <errorDisplayField>MailingPostalCode__c</errorDisplayField>
+    <errorMessage>you are wrong</errorMessage>
+</ValidationRule>
