@@ -4,10 +4,19 @@
         <members>A01_StoreMonthlySalesControl</members>
         <members>A01_StoreMonthlySalesCsvControl</members>
         <members>A01_StoreMonthlySalesPdfControl</members>
-        <members>A01_StoreMonthlySalesDetailControl	</members>
+        <members>A01_StoreMonthlySalesDetailControl</members>
+        <members>A01_Store_ClassicController</members>
+        <members>A01_StoreMonthlySalesCsvControl</members>
+        
         <name>ApexClass</name>
     </types>
 
+    <types>
+        <members>A01_Store_ClassicPage</members>
+        <members>A01_Store_ClassicCsvPage</members>
+        <members>A01_Store_ClassicPdfPage</members>
+        <name>ApexPage</name>
+    </types>
 
     <types>  
         <members>Account</members>  
@@ -22,10 +31,7 @@
         <members>*</members>
         <name>ApexComponent</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexPage</name>
-    </types>
+
 
     <types>
         <members>*</members>
