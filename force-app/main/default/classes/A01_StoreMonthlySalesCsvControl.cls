@@ -1,18 +1,23 @@
 public class A01_StoreMonthlySalesCsvControl {
 	//CSVデータ
 	public list<A01_MonthlySales__c> csvList { get; set; }
-	ApexPages.StandardSetController controller { get; set; }
 	
 	//ファイル名
 	public string csvFileName { get; set; }
 
+	//一覧画面の引数：店名
+	public string csvParamsStoreName { get; set; }
+	public string csvParamsMonth { get; set; }
+	public string csvParamsPickedStatus { get; set; }
+
 	public Pagereference initCsv() {
-		//店名
-		string param1 = ApexPages.currentPage().getParameters().get('selStoreName');
-		//CSVデータ取得のSqlを作成する
-		system.debug('1XXXXX'+param1);
 		
-		string sql = getSearchSql(param1, param2, param3);
+		//CSVデータ取得のSqlを作成する
+		system.debug('1XXXXX'+csvParamsStoreName);
+		system.debug('2XXXXX'+csvParamsMonth);
+		system.debug('3XXXXX'+csvParamsPickedStatus);
+		
+		string sql = getSearchSql(csvParamsStoreName, csvParamsMonth, csvParamsPickedStatus);
 		csvList = [select Id, StoreR__r.StoreName__c,Monthly__c,MonthlySales__c,MonthlyCost__c,MonthlyExpense__c from A01_MonthlySales__c where Id != null limit 1000];
  		csvFileName = 'CSV_Sample';
 		return null;
