@@ -8,6 +8,13 @@
         <members>A01_Store_ClassicController</members>
         <members>A01_StoreMonthlySalesCsvControl</members>
         
+        <members>A01_DaylySales_Totalization_Bat</members>
+        <members>A01_DaylySales_Totalization_BatTest</members>
+
+        <members>AnimalCls</members>
+        <members>DogCls</members>
+        <members>DogTestCls</members>
+        
         <name>ApexClass</name>
     </types>
 
