@@ -18,10 +18,16 @@
         <members>A01_CSVCreator</members>
         <members>A01_StoreMonthlySalesCsvControl</members>
         
-        
+        <!-- Trigger サンプルのHandler -->
+        <members>A01_DaylySales_TotalingHandler</members>
         <name>ApexClass</name>
     </types>
-
+    <types>
+        <!-- Trigger サンプル -->
+        <members>A01_DaylySales_Totaling</members>
+        
+        <name>ApexTrigger</name>
+    </types>
     <types>
         <members>A01_Store_ClassicPage</members>
         <members>A01_Store_ClassicCsvPage</members>
@@ -31,6 +37,8 @@
         
         <members>A01_Store_ClassicPdfPage</members>
         <members>A01_StoreMonthlySalesDetailScreen</members>
+
+
         
         <name>ApexPage</name>
     </types>
@@ -54,10 +62,7 @@
         <members>*</members>
         <name>ApexTestSuite</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
+
     <types>
         <members>*</members>
         <name>AuraDefinitionBundle</name>

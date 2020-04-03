@@ -46,10 +46,10 @@
         }
     </style>
 
-    <apex:pageBlock>
+    <apex:pageBlock >
 
         <div style="font-family: Arial Unicode MS;">
-            <apex:outputPanel>
+            <apex:outputPanel >
                 <p>販売店売上: {!pdfDate}</p>
             </apex:outputPanel>
             <apex:pageBlockTable value="{!outputList}" var="item" headerClass="tablehead" rowClasses="odd,even" style="font-size: 50%;border: 1px solid; "
@@ -76,7 +76,7 @@
                 </apex:column>
             </apex:pageBlockTable>
 
-            <apex:outputPanel>
+            <apex:outputPanel >
                 月次売上：
                 <apex:outputText value="{!totalBean.MonthlySales}" />
                 <br/> 月次原価：

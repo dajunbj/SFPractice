@@ -1,8 +1,8 @@
 <apex:page controller="A01_StoreMonthlySalesPdfControl" action="{!execute}" renderAs="pdf" contentType="application/pdf#xxxxfucny.pdf">
     <h1>帳票ダウンロードサンプル</h1>
 
-    <apex:form>
-        <apex:pageblock>
+    <apex:form >
+        <apex:pageblock >
             <div style="position:absolute;float:left;">
                 <apex:pageBlockTable value="{!pdfList}" var="rec">
                     <apex:column headerValue="店名" style="border-style: groove;with:">
