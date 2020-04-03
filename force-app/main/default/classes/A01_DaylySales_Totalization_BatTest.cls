@@ -1,6 +1,6 @@
 @isTest
 public class A01_DaylySales_Totalization_BatTest {
-     
+     /*
     static testMethod void testGetDaylySalesListInfo001(){
         insertData('大崎支店');
 
@@ -73,4 +73,5 @@ public class A01_DaylySales_Totalization_BatTest {
         insert insList;
 
     }
+    */
 }

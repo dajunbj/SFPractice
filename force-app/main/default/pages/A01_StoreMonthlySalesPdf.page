@@ -1,0 +1,26 @@
+<apex:page controller="A01_StoreMonthlySalesPdfControl" action="{!execute}" renderAs="pdf" contentType="application/pdf#xxxxfucny.pdf">
+    <h1>帳票ダウンロードサンプル</h1>
+
+    <apex:form>
+        <apex:pageblock>
+            <div style="position:absolute;float:left;">
+                <apex:pageBlockTable value="{!pdfList}" var="rec">
+                    <apex:column headerValue="店名" style="border-style: groove;with:">
+                        <apex:outputText value="{!rec.StoreR__r.StoreName__c}" /></apex:column>
+                    <!--
+                    <apex:column headerValue="年月" style="border-style: groove;">
+                        <apex:outputText value="{!rec.Monthly__c}" /></apex:column>
+                    -->
+                    <apex:column headerValue="月次売上" style="border-style: groove;">
+                        <apex:outputText value="{!rec.MonthlySales__c}" /></apex:column>
+                    <apex:column headerValue="月次費用" style="border-style: groove;">
+                        <apex:outputText value="{!rec.MonthlyExpense__c}" /></apex:column>
+                    <apex:column headerValue="月次原価" style="border-style: groove;">
+                        <apex:outputText value="{!rec.MonthlyCost__c}" /></apex:column>
+                    <apex:column headerValue="承認ステータス" style="border-style: groove;">
+                        <apex:outputText value="{!rec.ApprovalStatus__c}" /></apex:column>
+                </apex:pageBlockTable>
+            </div>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

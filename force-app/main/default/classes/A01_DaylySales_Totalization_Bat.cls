@@ -1,6 +1,6 @@
 public class A01_DaylySales_Totalization_Bat {
     public A01_DaylySales_Totalization_Bat() {}
-    
+    /*
     public string main(boolean flg,string storeName) {
         if (!flg) {
             return '1日ではないので、実施できません。';
@@ -42,4 +42,5 @@ public class A01_DaylySales_Totalization_Bat {
         insert insertData;
         
     }
+    */
 }

@@ -15,13 +15,23 @@
         <members>DogCls</members>
         <members>DogTestCls</members>
         
+        <members>A01_CSVCreator</members>
+        <members>A01_StoreMonthlySalesCsvControl</members>
+        
+        
         <name>ApexClass</name>
     </types>
 
     <types>
         <members>A01_Store_ClassicPage</members>
         <members>A01_Store_ClassicCsvPage</members>
+        <members>A01_StoreMonthlySalesScreen</members>
+        <members>A01_StoreMonthlySalesPdf</members>
         <members>A01_Store_ClassicPdfPage</members>
+        
+        <members>A01_Store_ClassicPdfPage</members>
+        <members>A01_StoreMonthlySalesDetailScreen</members>
+        
         <name>ApexPage</name>
     </types>
 

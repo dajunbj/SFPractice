@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>StoreNoDay__c</fullName>
-    <caseSensitive>false</caseSensitive>
     <externalId>false</externalId>
-    <label>店番_日付</label>
-    <length>16</length>
-    <required>true</required>
+    <formula>StoreR__r.StoreNo__c &amp;  TEXT(Day__c)</formula>
+    <label>店番年月日</label>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>
-    <unique>true</unique>
+    <unique>false</unique>
 </CustomField>
