@@ -7,10 +7,8 @@
                 <apex:pageBlockTable value="{!pdfList}" var="rec">
                     <apex:column headerValue="店名" style="border-style: groove;with:">
                         <apex:outputText value="{!rec.StoreR__r.StoreName__c}" /></apex:column>
-                    <!--
                     <apex:column headerValue="年月" style="border-style: groove;">
                         <apex:outputText value="{!rec.Monthly__c}" /></apex:column>
-                    -->
                     <apex:column headerValue="月次売上" style="border-style: groove;">
                         <apex:outputText value="{!rec.MonthlySales__c}" /></apex:column>
                     <apex:column headerValue="月次費用" style="border-style: groove;">

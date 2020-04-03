@@ -19,7 +19,7 @@ public class A01_CSVCreator {
         List<A01_MonthlySales__c> lst = [select Name,Monthly__c,MonthlySales__c from A01_MonthlySales__c];
  		//Handling fields with commas
         for(A01_MonthlySales__c rec : lst) {
-            //retList.add('\'' + rec.Name + '\',' +  '\'' + rec.Monthly__c + '\','+  '\'' + rec.MonthlySales__c + '\'');
+            retList.add('\'' + rec.Name + '\',' +  '\'' + rec.Monthly__c + '\','+  '\'' + rec.MonthlySales__c + '\'');
         }
         return retList;
     }

@@ -1,6 +1,5 @@
 public class A01_DaylySales_Totalization_Bat {
     public A01_DaylySales_Totalization_Bat() {}
-    /*
     public string main(boolean flg,string storeName) {
         if (!flg) {
             return '1日ではないので、実施できません。';
@@ -36,11 +35,9 @@ public class A01_DaylySales_Totalization_Bat {
         //月次売上の登録
         A01_MonthlySales__c insertData = new A01_MonthlySales__c();
         insertData.MonthlySales__c = sales;  //月次売上
-        insertData.Monthly__c = string.valueof(system.Date.today()).replaceAll('-', '').left(6); //年月
+        insertData.Monthly__c = system.Date.today(); //月次集計年月日
         insertData.StoreR__c = daylyList.get(0).StoreR__r.Id;        //販売店情報
-        insertData.StoreNoMonthly__c = daylyList.get(0).StoreR__r.StoreNo__c+'202003';//店番_年月
         insert insertData;
         
     }
-    */
 }

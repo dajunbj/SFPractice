@@ -1,6 +1,5 @@
 @isTest
 public class A01_DaylySales_Totalization_BatTest {
-     /*
     static testMethod void testGetDaylySalesListInfo001(){
         insertData('大崎支店');
 
@@ -61,17 +60,15 @@ public class A01_DaylySales_Totalization_BatTest {
             dayInfo = new A01_DaylySales__c();
             dayInfo.Name = name;
             dayInfo.StoreR__c = store.Id;
-            dayInfo.Day__c = '202003'+ string.valueof(index);
+            dayInfo.Day__c = system.today().addDays(index);
             dayInfo.Sales__c = 100;
             dayInfo.CostSalary__c = 100;
             dayInfo.CostHydroelectric__c = 100;
             dayInfo.CostRental__c = 100;
             dayInfo.Profit__c = 100;
-            dayInfo.StoreNoDay__c = store.StoreNo__c+string.valueof(index);
             insList.add(dayInfo);
         }
         insert insList;
 
     }
-    */
 }

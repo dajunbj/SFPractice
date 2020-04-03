@@ -25,7 +25,6 @@ public class A01_StoreMonthlySalesCsvControl {
 
 	/* 検索SQLファイル作成 */
 	private string getSearchSql(string inputStoreNm, string inputMonth, string pickedStatus) {
-
 		string sql = 'select Id, StoreR__r.StoreName__c ,Monthly__c, MonthlySales__c, MonthlyExpense__c, MonthlyCost__c, ApprovalStatus__c from A01_MonthlySales__c where Id != null limit 10';
 
 		if(string.isNotBlank(inputMonth)) {
@@ -33,9 +32,9 @@ public class A01_StoreMonthlySalesCsvControl {
 		}
 		
 		if(string.isNotBlank(pickedStatus)) {
-			//sql += ' and ApprovalStatus__c = ' + '\'' + pickedStatus + '\'';
+			sql += ' and ApprovalStatus__c = ' + '\'' + pickedStatus + '\'';
 		}
-		//sql += ' order by Monthly__c';
+		sql += ' order by Monthly__c';
 
 		return sql;
 	}

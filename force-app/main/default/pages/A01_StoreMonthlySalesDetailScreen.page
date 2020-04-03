@@ -14,14 +14,12 @@
                 <apex:pageBlockTable value="{!searchResultList}" var="item">
                     <apex:column headerValue="店名">
                         <apex:outputText value="{!item.StoreR__r.StoreName__c}" /></apex:column>
-                    <!--
                     <apex:column headerValue="年月日">
                         <apex:outputText value="{!item.Day__c}" /></apex:column>
-                    -->
                     <apex:column headerValue="売上">
                         <apex:outputText value="{!item.Sales__c}" /></apex:column>
                     <apex:column headerValue="原価">
-                        <!--<apex:outputText value="{!item.Cost__c}" />-->
+                        <apex:outputText value="{!item.Cost__c}" />
                         <apex:inputText value="{!item.Cost__c}" />
                     </apex:column>
                     <apex:column headerValue="利益">
