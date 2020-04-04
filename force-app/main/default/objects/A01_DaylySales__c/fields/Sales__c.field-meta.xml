@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>売上</label>
     <precision>18</precision>
-    <required>true</required>
+    <required>false</required>
     <scale>4</scale>
     <trackTrending>false</trackTrending>
     <type>Number</type>
