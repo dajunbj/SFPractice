@@ -4,7 +4,7 @@ public class A01_DaylySales_TotalingHandler {
         date ymd = arr[0].Day__c;
 
         for (A01_DaylySales__c obj : arr) {
-            //年月日の必須にゅりょくチェック
+            //月次の売上の必須入力チェック
             if (obj.Sales__c == null) {
                 obj.Sales__c.addError('日次売上・売上に金額をご記入ください。');
             }

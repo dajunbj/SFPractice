@@ -20,6 +20,10 @@
         
         <!-- Trigger サンプルのHandler -->
         <members>A01_DaylySales_TotalingHandler</members>
+
+        <!-- JOB スケジュール起動 -->
+        <members>A01_StoreLevelUp_Schedulable</members>
+
         <name>ApexClass</name>
     </types>
     <types>
