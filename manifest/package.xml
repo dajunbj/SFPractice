@@ -24,6 +24,10 @@
         <!-- JOB スケジュール起動 -->
         <members>A01_StoreLevelUp_Schedulable</members>
 
+        <!-- Exception サンプル -->
+        <members>A01_Exception_Sample_Controller</members>
+        <members>A01_Exception_Sample_ControllerTest</members>
+
         <name>ApexClass</name>
     </types>
     <types>
