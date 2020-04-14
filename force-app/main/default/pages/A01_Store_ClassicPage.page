@@ -9,7 +9,7 @@
 
   <apex:form id="form">
 
-    <apex:pageBlock >
+    <apex:pageBlock>
       <div style="width:800px;">
         <div style="text-align: left;">
           <apex:commandButton value="検索" action="{!doSearch}" style="margin: 0px 5px 0px 5px;width:50px;" />
@@ -35,7 +35,7 @@
           </apex:selectList>
         </div>
         <div>
-          <apex:pageBlockButtons >
+          <apex:pageBlockButtons>
             <apex:commandButton value="前へ" action="{!preRecord}" style="margin: 0px 5px 0px 5px;width:50px;" />
             <apex:selectList value="{!pageCount}" size="1" style="margin: 0px 2px 0px 2px;width:40px;" multiselect="false">
               <apex:selectOptions value="{!pageCountList}" />
@@ -44,7 +44,7 @@
             <apex:commandButton value="後へ" action="{!nextRecord}" style="margin: 0px 5px 0px 5px;width:50px;" />
           </apex:pageBlockButtons>
           <apex:pageBlockTable var="item" value="{!dataList}" style="margin: 2px 2px 2px 2px;">
-            <apex:column >
+            <apex:column>
               <apex:facet name="header">
                 ID
               </apex:facet>
@@ -53,28 +53,28 @@
               </apex:outputLink>
             </apex:column>
 
-            <apex:column >
+            <apex:column>
               <apex:facet name="header">
                 店名
               </apex:facet>
               <apex:outputField value="{!item.StoreName__c}" />
             </apex:column>
 
-            <apex:column >
+            <apex:column>
               <apex:facet name="header">
                 店番
               </apex:facet>
               <apex:outputField value="{!item.StoreNo__c}" />
             </apex:column>
 
-            <apex:column >
+            <apex:column>
               <apex:facet name="header">
                 店長
               </apex:facet>
               <apex:outputField value="{!item.StoreManager__c}" />
             </apex:column>
 
-            <apex:column >
+            <apex:column>
               <apex:facet name="header">
                 都道府県名
               </apex:facet>

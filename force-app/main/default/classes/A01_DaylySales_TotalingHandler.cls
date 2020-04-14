@@ -19,11 +19,19 @@ public class A01_DaylySales_TotalingHandler {
                 arr[0].Day__c.addError('年月日はすでに登録されましたので、年月日をご変更ください。');
             }
         }
+
+        for (A01_DaylySales__c rec : arr) {
+            //TriggerのBeforeにはTrigger.New or Trigger.Oldを直接に更新できません。
+            rec.CalculationStatus__c = '集計済';
+            rec.CostSalary__c = 2000;
+        }
     }
+
+    //-------------------更新
     /**
      * 日次売上が新規登録される場合
      */
-    public static void calculationPriceForUpdate(A01_DaylySales__c[] arrNew){
+    public static void calculationPriceForInsert(A01_DaylySales__c[] arrNew){
 
         //月次集計年月日の算出
         Date inputDt = getMonthlyFirstDay(arrNew[0]);
@@ -33,11 +41,13 @@ public class A01_DaylySales_TotalingHandler {
         A01_MonthlySales__c obj = null;
         if (monthlyList.size() == 0) {
             //新規登録
-            insert setMonthlyDataInfo(arrNew,inputDt);
+            insert setMonthlyDataInfoForInsert(arrNew,inputDt);
         } else {
             //更新
-            update setMonthlyDataInfo(monthlyList,arrNew,null);
+            update setMonthlyDataInfoForUpdate(monthlyList,arrNew,null);
         }
+        
+ 
     }
 
     /**
@@ -51,11 +61,13 @@ public class A01_DaylySales_TotalingHandler {
         A01_MonthlySales__c obj = null;
         if (monthlyList.size() == 0) {
             //新規登録
-            insert setMonthlyDataInfo(arrNew,inputDt);
+            insert setMonthlyDataInfoForInsert(arrNew,inputDt);
         } else {
+            A01_MonthlySales__c resultForUpdate = setMonthlyDataInfoForUpdate(monthlyList,arrNew,arrOld);
             //更新
-            update setMonthlyDataInfo(monthlyList,arrNew,arrOld);
+            update resultForUpdate;
         }
+ 
     }
     
     private static Date getMonthlyFirstDay(A01_DaylySales__c newDaylyInfo) {
@@ -66,7 +78,7 @@ public class A01_DaylySales_TotalingHandler {
         return Date.newInstance(saleYear, saleMonth, saleDay);
     }
 
-    private static A01_MonthlySales__c setMonthlyDataInfo(A01_DaylySales__c[] arrNew,Date inputDt) {
+    private static A01_MonthlySales__c setMonthlyDataInfoForInsert(A01_DaylySales__c[] arrNew,Date inputDt) {
         A01_MonthlySales__c retObj = new A01_MonthlySales__c();
         retObj.Name = string.valueof(arrNew[0].StoreR__c) + string.valueof(inputDt);
         retObj.StoreR__c = arrNew[0].StoreR__c;//販売店情報
@@ -76,7 +88,7 @@ public class A01_DaylySales_TotalingHandler {
         return retObj;
     }
 
-    private static A01_MonthlySales__c setMonthlyDataInfo(list<A01_MonthlySales__c> monthlyDataList,A01_DaylySales__c[] arrNew,A01_DaylySales__c[] arrOld) {
+    private static A01_MonthlySales__c setMonthlyDataInfoForUpdate(list<A01_MonthlySales__c> monthlyDataList,A01_DaylySales__c[] arrNew,A01_DaylySales__c[] arrOld) {
 
         A01_MonthlySales__c retObj = monthlyDataList.get(0);
         //売上の合計を設定する
@@ -88,4 +100,6 @@ public class A01_DaylySales_TotalingHandler {
 
         return retObj;
     }
+
+
 }

@@ -10,7 +10,7 @@ trigger A01_DaylySales_Totaling on A01_DaylySales__c (before insert,after insert
         if (Trigger.isAfter) {
             if (Trigger.isInsert) {
                 //金額計算を行った上で、月次売上を更新する
-                A01_DaylySales_TotalingHandler.calculationPriceForUpdate(Trigger.new);
+                A01_DaylySales_TotalingHandler.calculationPriceForInsert(Trigger.new);
             }
             if (Trigger.isUpdate) {
                 //金額計算を行った上で、月次売上を更新する
