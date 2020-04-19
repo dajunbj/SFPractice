@@ -17,7 +17,6 @@ public class A01_DaylySales_TotalingHandlerTest {
 
     /** 異常パターン1*/
     @isTest static void testCheckItemValue_Error_01() {
-        System.Test.startTest();
         string mess = '';
         //データ作成
         try {
@@ -68,6 +67,7 @@ public class A01_DaylySales_TotalingHandlerTest {
         store.PostalCode__c = '2120001';
         insert store;
 
+        
         A01_DaylySales__c obj1 = new A01_DaylySales__c();
         obj1.name = 'テスト名前';
         obj1.Day__c = system.today();
