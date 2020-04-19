@@ -4,10 +4,52 @@
         <members>A01_StoreMonthlySalesControl</members>
         <members>A01_StoreMonthlySalesCsvControl</members>
         <members>A01_StoreMonthlySalesPdfControl</members>
-        <members>A01_StoreMonthlySalesDetailControl	</members>
+        <members>A01_StoreMonthlySalesDetailControl</members>
+        <members>A01_Store_ClassicController</members>
+        <members>A01_StoreMonthlySalesCsvControl</members>
+        
+        <members>A01_DaylySales_Totalization_Bat</members>
+        <members>A01_DaylySales_Totalization_BatTest</members>
+
+        <members>AnimalCls</members>
+        <members>DogCls</members>
+        <members>DogTestCls</members>
+        
+        <members>A01_CSVCreator</members>
+        <members>A01_StoreMonthlySalesCsvControl</members>
+        
+        <!-- Trigger サンプルのHandler -->
+        <members>A01_DaylySales_TotalingHandler</members>
+
+        <!-- JOB スケジュール起動 -->
+        <members>A01_StoreLevelUp_Schedulable</members>
+
+        <!-- Exception サンプル -->
+        <members>A01_Exception_Sample_Controller</members>
+        <members>A01_Exception_Sample_ControllerTest</members>
+
         <name>ApexClass</name>
     </types>
+    <types>
+        <!-- Trigger サンプル -->
+        <members>A01_DaylySales_Totaling</members>
+        
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>A01_Store_ClassicPage</members>
+        <members>A01_Store_ClassicCsvPage</members>
+        <members>A01_StoreMonthlySalesScreen</members>
+        <members>A01_StoreMonthlySalesPdf</members>
+        <members>A01_Store_ClassicPdfPage</members>
+        
+        <members>A01_Store_ClassicPdfPage</members>
+        <members>A01_StoreMonthlySalesDetailScreen</members>
 
+
+        
+        <name>ApexPage</name>
+    </types>
 
     <types>  
         <members>Account</members>  
@@ -22,19 +64,13 @@
         <members>*</members>
         <name>ApexComponent</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexPage</name>
-    </types>
+
 
     <types>
         <members>*</members>
         <name>ApexTestSuite</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
+
     <types>
         <members>*</members>
         <name>AuraDefinitionBundle</name>

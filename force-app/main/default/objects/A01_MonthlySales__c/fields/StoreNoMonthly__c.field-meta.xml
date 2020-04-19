@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>StoreNoMonthly__c</fullName>
-    <caseSensitive>false</caseSensitive>
     <externalId>false</externalId>
-    <label>店番_年月</label>
-    <length>14</length>
-    <required>true</required>
+    <formula>StoreR__r.StoreNo__c  &amp; &#39;_&#39; &amp;   TEXT(YEAR(Monthly__c ))  &amp; &#39;年&#39; &amp; TEXT( MONTH(Monthly__c ))  &amp; &#39;月&#39;</formula>
+    <label>店番年月</label>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>
-    <unique>true</unique>
+    <unique>false</unique>
 </CustomField>

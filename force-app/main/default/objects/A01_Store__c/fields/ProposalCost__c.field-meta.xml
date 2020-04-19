@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ApprovalStatus__c</fullName>
+    <fullName>ProposalCost__c</fullName>
     <externalId>false</externalId>
-    <label>承認ステータス</label>
-    <required>true</required>
+    <label>控除金</label>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -11,25 +11,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>未申請</fullName>
-                <default>true</default>
-                <label>未申請</label>
+                <fullName>20</fullName>
+                <default>false</default>
+                <label>20</label>
             </value>
             <value>
-                <fullName>申請中</fullName>
+                <fullName>10</fullName>
                 <default>false</default>
-                <label>申請中</label>
+                <label>10</label>
             </value>
             <value>
-                <fullName>承認済</fullName>
+                <fullName>5</fullName>
                 <default>false</default>
-                <label>承認済</label>
-            </value>
-            <value>
-                <fullName>提出済</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>提出済</label>
+                <label>5</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -1,0 +1,51 @@
+<apex:page controller="A01_StoreMonthlySalesDetailControl">
+    <apex:form id="form">
+        <div>
+            <apex:pageblock title="検索条件">
+                <apex:outputLabel value="店 名:" />
+                <apex:outputLabel value="{!selStoreName}" />
+                <apex:outputLabel value="年 月:" />
+                <apex:outputLabel value="{!selMonthly}" />
+
+                <apex:commandButton id="RequestBtn" action="{!doRequest}" value="申請" disabled="{!btnApplyFlg}" />
+                <apex:commandButton id="ApprovalBtn" action="{!doApproval}" value="承認" disabled="{!btnApproveFlg}" />
+                <apex:commandButton id="DenialBtn" action="{!doDenial}" value="否認" disabled="{!btnApproveFlg}" />
+
+                <apex:pageBlockTable value="{!searchResultList}" var="item">
+                    <apex:column headerValue="店名">
+                        <apex:outputText value="{!item.StoreR__r.StoreName__c}" /></apex:column>
+                    <apex:column headerValue="年月日">
+                        <apex:outputText value="{!item.Day__c}" /></apex:column>
+                    <apex:column headerValue="売上">
+                        <apex:outputText value="{!item.Sales__c}" /></apex:column>
+                    <apex:column headerValue="原価">
+                        <apex:outputText value="{!item.Cost__c}" />
+                        <apex:inputText value="{!item.Cost__c}" />
+                    </apex:column>
+                    <apex:column headerValue="利益">
+                        <apex:outputText value="{!item.Profit__c}" /></apex:column>
+                    <apex:column headerValue="費用(水電)">
+                        <apex:outputText value="{!item.CostHydroelectric__c}" /></apex:column>
+                    <apex:column headerValue="費用(給料)">
+                        <apex:outputText value="{!item.CostSalary__c}" /></apex:column>
+                    <apex:column headerValue="費用(賃貸)">
+                        <apex:outputText value="{!item.CostRental__c}" /></apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblock>
+        </div>
+        <div class="header-cls">
+            <apex:pageblock title="添付ファイル一覧">
+                <apex:inputFile id="InputFile" value="{!fileBody}" filename="{!fileName}" />
+                <apex:commandButton action="{!loadCsv}" value="CSVロード" styleClass="btnHeader" disabled="{!loadCsvFlg}" />
+
+                <apex:pageBlockTable value="{!fileList}" var="obj">
+                    <apex:column headerValue="ファイル名">
+                        <apex:outputLink value="{!URLFOR('/'+obj.Id)}">
+                            {!obj.Name}
+                        </apex:outputLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblock>
+        </div>
+    </apex:form>
+</apex:page>

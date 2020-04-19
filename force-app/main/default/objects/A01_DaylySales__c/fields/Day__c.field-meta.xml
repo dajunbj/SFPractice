@@ -3,9 +3,7 @@
     <fullName>Day__c</fullName>
     <externalId>false</externalId>
     <label>年月日</label>
-    <length>8</length>
     <required>false</required>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Date</type>
 </CustomField>

@@ -1,0 +1,88 @@
+<apex:page controller="A01_Store_ClassicController">
+  <script>
+    function clickLink() {
+      //非表示のCSVダウンロードのリンクをクリックする
+      document.getElementById("j_id0:form:j_id2:csvLink").click();
+    }
+
+  </script>
+
+  <apex:form id="form">
+
+    <apex:pageBlock >
+      <div style="width:800px;">
+        <div style="text-align: left;">
+          <apex:commandButton value="検索" action="{!doSearch}" style="margin: 0px 5px 0px 5px;width:50px;" />
+          <apex:commandButton value="PDF" action="{!doPdf}" style="margin: 0px 5px 0px 5px;width:50px;" />
+          <input type="button" onclick="clickLink()" value="CSV引数有り" style="margin: 0px 5px 0px 5px;width:100px;" />
+
+          <apex:outputLink value="{!URLFOR('/apex/A01_Store_ClassicCsvPage')}" id="csvLink">
+            <apex:param name="csvParamsStoreName" value="{!selStoreName}" />
+            <apex:param name="csvParamsMonth" value="202003" />
+            <apex:param name="csvParamsPickedStatus" value="{!prefectureNameSel}" />
+          </apex:outputLink>
+        </div>
+        <div>
+          <apex:outputLabel value="店名" style="margin: 2px 29px 2px 2px;" />
+          <apex:inputText id="selStoreName" value="{!selStoreName}" title="販売店名" style="margin: 2px 2px 2px 2px;width:150px;" />
+        </div>
+
+        <div>
+
+          <apex:outputLabel value="都道府県" style="margin: 2px 2px 2px 2px;" />
+          <apex:selectList value="{!prefectureNameSel}" size="1" style="margin: 2px 2px 2px 2px;width:155px;">
+            <apex:selectOptions value="{!prefectureNameList}" />
+          </apex:selectList>
+        </div>
+        <div>
+          <apex:pageBlockButtons >
+            <apex:commandButton value="前へ" action="{!preRecord}" style="margin: 0px 5px 0px 5px;width:50px;" />
+            <apex:selectList value="{!pageCount}" size="1" style="margin: 0px 2px 0px 2px;width:40px;" multiselect="false">
+              <apex:selectOptions value="{!pageCountList}" />
+            </apex:selectList>
+            <apex:outputLabel value="{!pageNow}" />頁
+            <apex:commandButton value="後へ" action="{!nextRecord}" style="margin: 0px 5px 0px 5px;width:50px;" />
+          </apex:pageBlockButtons>
+          <apex:pageBlockTable var="item" value="{!dataList}" style="margin: 2px 2px 2px 2px;">
+            <apex:column >
+              <apex:facet name="header">
+                ID
+              </apex:facet>
+              <apex:outputLink value="/{!item.Id}">
+                {!item.Id}
+              </apex:outputLink>
+            </apex:column>
+
+            <apex:column >
+              <apex:facet name="header">
+                店名
+              </apex:facet>
+              <apex:outputField value="{!item.StoreName__c}" />
+            </apex:column>
+
+            <apex:column >
+              <apex:facet name="header">
+                店番
+              </apex:facet>
+              <apex:outputField value="{!item.StoreNo__c}" />
+            </apex:column>
+
+            <apex:column >
+              <apex:facet name="header">
+                店長
+              </apex:facet>
+              <apex:outputField value="{!item.StoreManager__c}" />
+            </apex:column>
+
+            <apex:column >
+              <apex:facet name="header">
+                都道府県名
+              </apex:facet>
+              <apex:outputField value="{!item.PrefectureR__r.PrefectureName__c}" />
+            </apex:column>
+          </apex:pageBlockTable>
+        </div>
+      </div>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

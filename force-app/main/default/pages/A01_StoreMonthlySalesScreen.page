@@ -1,0 +1,76 @@
+<apex:page controller="A01_StoreMonthlySalesControl">
+    <style>
+        .header-cls {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .btnHeader {
+            padding-right: 10px;
+            width: 100px;
+        }
+    </style>
+    <apex:form id="formMain">
+        <div>
+            <div>
+                <apex:pageblock title="検索条件">
+                    <div class="header-cls">
+                        <apex:outputLabel value="店名" />
+                        <apex:inputText id="inputStoreName" value="{!inputStoreName}" />
+                        <apex:outputLabel value="年月" />
+                        <apex:inputText id="inputMonth" value="{!inputMonth}" />
+                        <apex:outputLabel value="承認ステータス" />
+                        <apex:selectList multiselect="false" value="{!pickedStatus}" size="1">
+                            <apex:selectOptions value="{!statusList}">
+                            </apex:selectOptions>
+                        </apex:selectList>
+                    </div>
+                    <div class="header-cls">
+                        <apex:commandButton id="search" action="{!search}" value="検索" styleClass="btnHeader" />
+                        <apex:commandButton id="printCsvHdn" value="CSVダウンロード" styleClass="btnHeader" onclick="document.getElementById('j_id0:formCsv:printCsv').click(); return false;"
+                        />
+                        <apex:commandButton id="printPdfHdn" value="PDFダウンロード" styleClass="btnHeader" onclick="document.getElementById('j_id0:formCsv:printPdf').click(); return false;"
+                        />
+                    </div>
+                </apex:pageblock>
+            </div>
+            <div class="header-cls">
+                <apex:pageblock title="検索結果">
+                    <apex:pageblockbuttons >
+                        <apex:commandButton action="{!first}" value="最初" rendered="{!ssc.HasPrevious}" />
+                        <apex:commandButton action="{!previous}" value="前" rendered="{!ssc.HasPrevious}" /> {!ssc.PageNumber}/{!totalpage}頁数/総頁数
+                        <apex:commandButton action="{!next}" value="後" rendered="{!ssc.HasNext}" />
+                        <apex:commandButton action="{!last}" value="最後" rendered="{!ssc.HasNext}" />
+                    </apex:pageblockbuttons>
+                    <apex:pageBlockTable value="{!searchResultList}" var="item">
+                        <apex:column headerValue="店名">
+                            <apex:outputLink value="{!URLFOR('/'+item.Id)}" target="_blank">
+                                {!item.StoreR__r.StoreName__c}
+                            </apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="年月">
+                            <apex:outputLink value="{!URLFOR($Page.A01_StoreMonthlySalesDetailScreen)}?inputStoreName={!item.StoreR__r.StoreName__c}&inputMonthly={!item.Monthly__c}"
+                                target="_blank">
+                                {!item.Monthly__c}
+                            </apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="月次売上">
+                            <apex:outputText value="{!item.MonthlySales__c}" /></apex:column>
+                        <apex:column headerValue="月次費用">
+                            <apex:outputText value="{!item.MonthlyExpense__c}" /></apex:column>
+                        <apex:column headerValue="月次原価">
+                            <apex:outputText value="{!item.MonthlyCost__c}" /></apex:column>
+                        <apex:column headerValue="承認ステータス">
+                            <apex:outputText value="{!item.ApprovalStatus__c}" /></apex:column>
+                        <apex:column headerValue="承認者">
+                            <apex:outputText value="{!item.Authorizer__c}" /></apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageblock>
+            </div>
+        </div>
+    </apex:form>
+    <apex:form id="formCsv" target="_blank">
+        <apex:commandButton id="printPdf" value="PDFダウンロード" action="{!printPdf}" style="display:none;" />
+        <apex:commandButton id="printCsv" value="CSVダウンロード" action="{!printCsv}" style="display:none;" />
+    </apex:form>
+</apex:page>

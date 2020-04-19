@@ -2,10 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Monthly__c</fullName>
     <externalId>false</externalId>
-    <label>年月</label>
-    <length>6</length>
-    <required>true</required>
+    <label>月次集計年月日</label>
+    <required>false</required>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Date</type>
 </CustomField>

@@ -1,0 +1,6 @@
+<apex:page controller="A01_StoreMonthlySalesCsvControl" cache="true" contentType="text/csv;charset=UTF-8;#{!csvFileName}.csv"
+    action="{!initCsv}" language="en_US">"店名","年月","売上","費用","利益"
+    <apex:repeat value="{!csvList}" var="item">
+        "{!item.StoreR__r.StoreName__c}","{!item.Monthly__c}","{!item.MonthlySales__c}","{!item.MonthlyCost__c}","{!item.MonthlyExpense__c}"
+    </apex:repeat>
+</apex:page>
