@@ -10,7 +10,7 @@ public class A01_StoreMonthlySalesCsvControl {
 	public string csvParamsMonth { get; set; }
 	public string csvParamsPickedStatus { get; set; }
 
-	public Pagereference initCsv() {
+	public Pagereference execute() {
 		
 		//CSVデータ取得のSqlを作成する
 		system.debug('1XXXXX'+csvParamsStoreName);
