@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>A01_StoreMonthlySalesPdfControl</members>
+        <!--★★★Apex クラス★★★-->
+        <!--■ 販売店一覧画面-->
+        <members>A01_Store_ClassicController</members><!--一覧画面のクラス-->
         <members>A01_StoreMonthlySalesDetailControl</members>
-        <members>A01_Store_ClassicController</members>
         
+        <members>A01_CSVCreator</members>
+        <!-- ■ 販売店売上一覧画面 -->
+        <members>A01_StoreMonthlySalesControl</members><!--一覧画面のクラス-->
+        <members>A01_StoreMonthlySalesCsvControl</members><!--Csv出力クラス-->
+        <members>A01_StoreMonthlySalesPdfControl</members><!--Pdf出力クラス-->
+        
+        <!--Batch サンプル-->
         <members>A01_DaylySales_Totalization_Bat</members>
         <members>A01_DaylySales_Totalization_BatTest</members>
 
-        <members>AnimalCls</members>
-        <members>DogCls</members>
-        <members>DogTestCls</members>
-        
-        <members>A01_CSVCreator</members>
-        <!-- ■1.販売店売上一覧画面 -->
-        <members>A01_StoreMonthlySalesControl</members>
-        <members>A01_StoreMonthlySalesCsvControl</members>
-        
         <!-- Trigger サンプルのHandler -->
         <members>A01_DaylySales_TotalingHandler</members>
 
@@ -27,22 +26,30 @@
         <members>A01_Exception_Sample_Controller</members>
         <members>A01_Exception_Sample_ControllerTest</members>
 
+        <!--親子関係のオブジェクト例-->
+        <members>AnimalCls</members>
+        <members>DogCls</members>
+        <members>DogTestCls</members>
+
         <name>ApexClass</name>
     </types>
     <types>
-        <!-- Trigger サンプル -->
+        <!-- Trigger 日次売上の合計トリガー -->
         <members>A01_DaylySales_Totaling</members>
         
         <name>ApexTrigger</name>
     </types>
     <types>
-        <!-- ■1.販売店売上一覧画面 -->
+        <!--★★★Visualforce画面★★★-->
+        <!-- ■ 販売店売上一覧画面 -->
         <members>A01_StoreMonthlySalesScreen</members>
         <members>A01_StoreMonthlySalesPdf</members>
         <members>A01_StoreMonthlySalesCsv</members>
-        
+
+        <!-- ■ 販売店売上一覧画面 -->
         <members>A01_Store_ClassicPage</members>
         <members>A01_Store_ClassicCsvPage</members>
+
         <members>A01_StoreMonthlySalesPdf</members>
         <members>A01_Store_ClassicPdfPage</members>
         <members>A01_StoreMonthlySalesDetailScreen</members>
@@ -51,13 +58,15 @@
     </types>
 
     <types>  
+        <!--★★★オブジェクト定義★★★-->
         <members>Account</members>  
         <members>A01_Store__c</members>
         <members>A01_MonthlySales__c</members>
         <members>A01_DaylySales__c</members>
         <members>A01_Prefecture__c</members>
         <name>CustomObject</name>  
-    </types>  
+    </types>
+    
     <!--
     <types>
         <members>*</members>
