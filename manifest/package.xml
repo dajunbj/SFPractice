@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>A01_StoreMonthlySalesControl</members>
-        <members>A01_StoreMonthlySalesCsvControl</members>
         <members>A01_StoreMonthlySalesPdfControl</members>
         <members>A01_StoreMonthlySalesDetailControl</members>
         <members>A01_Store_ClassicController</members>
-        <members>A01_StoreMonthlySalesCsvControl</members>
         
         <members>A01_DaylySales_Totalization_Bat</members>
         <members>A01_DaylySales_Totalization_BatTest</members>
@@ -16,6 +13,8 @@
         <members>DogTestCls</members>
         
         <members>A01_CSVCreator</members>
+        <!-- ■1.販売店売上一覧画面 -->
+        <members>A01_StoreMonthlySalesControl</members>
         <members>A01_StoreMonthlySalesCsvControl</members>
         
         <!-- Trigger サンプルのHandler -->
@@ -37,17 +36,17 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>A01_Store_ClassicPage</members>
-        <members>A01_Store_ClassicCsvPage</members>
+        <!-- ■1.販売店売上一覧画面 -->
         <members>A01_StoreMonthlySalesScreen</members>
         <members>A01_StoreMonthlySalesPdf</members>
-        <members>A01_Store_ClassicPdfPage</members>
+        <members>A01_StoreMonthlySalesCsv</members>
         
+        <members>A01_Store_ClassicPage</members>
+        <members>A01_Store_ClassicCsvPage</members>
+        <members>A01_StoreMonthlySalesPdf</members>
         <members>A01_Store_ClassicPdfPage</members>
         <members>A01_StoreMonthlySalesDetailScreen</members>
 
-
-        
         <name>ApexPage</name>
     </types>
 

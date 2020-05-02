@@ -1,0 +1,7 @@
+<apex:page controller="A01_StoreMonthlySalesCsvControl" action="{!execute}"
+contentType="text/csv;charset=Shift-JIS;#{!csvFileName}.csv" readOnly="true">
+
+    <apex:repeat value="{!csvList}" var="rowVals">
+        <apex:outputText value="{!rowVals}" />
+    </apex:repeat>
+</apex:page>

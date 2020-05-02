@@ -30,7 +30,7 @@ public with sharing class A01_StoreMonthlySalesControl {
 	public PageReference search() {
 
 		ssc = new ApexPages.StandardSetController(Database.getQueryLocator(getSearchSql()));
-		ssc.setPageSize(5);
+		ssc.setPageSize(3);
 
 		searchResultList = searchObjects(1);
 
