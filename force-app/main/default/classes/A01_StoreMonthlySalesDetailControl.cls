@@ -4,13 +4,13 @@ public class A01_StoreMonthlySalesDetailControl {
 	//【承認・否認】ボタン
 	public boolean btnApproveFlg {get;set;}
 	public string selStoreName { get; set; }
-	public string selMonthly { get; set; }
+	public Date selMonthly { get; set; }
 
 	//画面明細リストオブジェクト
 	public list<A01_DaylySales__c> searchResultList { get; set; }
 	public A01_StoreMonthlySalesDetailControl() {
 		selStoreName =(string) ApexPages.currentPage().getParameters().get('inputStoreName');
-		selMonthly =(string) ApexPages.currentPage().getParameters().get('inputMonthly');
+		selMonthly = ApexPages.currentPage().getParameters().get('inputMonthly');
 
 		string sql = 'select Id, StoreR__r.StoreName__c,' +
 		'Day__c,' +

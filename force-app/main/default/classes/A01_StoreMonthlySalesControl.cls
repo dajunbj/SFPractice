@@ -22,6 +22,8 @@ public with sharing class A01_StoreMonthlySalesControl {
 	//画面明細リストオブジェクト
 	public list<A01_MonthlySales__c> searchResultList { get; set; }
 
+	public list<A01_StoreMonthlySalesBean> beanList { get; set; }
+
 	/**
 	 * search 検索ボタンをクリックする
 	 *
@@ -33,6 +35,23 @@ public with sharing class A01_StoreMonthlySalesControl {
 		ssc.setPageSize(3);
 
 		searchResultList = searchObjects(1);
+
+		beanList = new list<A01_StoreMonthlySalesBean>();
+		A01_StoreMonthlySalesBean bean = new A01_StoreMonthlySalesBean();
+		for (A01_MonthlySales__c rec : searchResultList) {
+			bean = new A01_StoreMonthlySalesBean();
+			bean.recordId = rec.Id;
+			bean.StoreName = rec.StoreR__r.StoreName__c;
+			bean.Monthly = string.valueof(rec.Monthly__c);
+			bean.MonthlyDay = rec.Monthly__c;
+			bean.MonthlySales = rec.MonthlySales__c;
+			bean.MonthlyExpense = rec.MonthlyExpense__c;
+			bean.MonthlyCost = rec.MonthlyCost__c;
+			bean.ApprovalStatus = rec.ApprovalStatus__c;
+			bean.Authorizer = rec.Authorizer__c;
+
+			beanList.add(bean);
+		}
 
 		return null;
 	}

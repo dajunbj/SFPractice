@@ -1,0 +1,9 @@
+<apex:page controller="A01_Store_SearchNameController">
+    <script type="text/javascript" charset="utf-8">
+        function sayHello() {
+
+        }
+
+
+    </script>
+</apex:page>

@@ -12,14 +12,11 @@ public class A01_StoreMonthlySalesCsvControl {
 
 	public Pagereference execute() {
 		
-		//CSVデータ取得のSqlを作成する
-		system.debug('1XXXXX'+csvParamsStoreName);
-		system.debug('2XXXXX'+csvParamsMonth);
-		system.debug('3XXXXX'+csvParamsPickedStatus);
-		
 		string sql = getSearchSql(csvParamsStoreName, csvParamsMonth, csvParamsPickedStatus);
 		csvList = [select Id, StoreR__r.StoreName__c,Monthly__c,MonthlySales__c,MonthlyCost__c,MonthlyExpense__c from A01_MonthlySales__c where Id != null limit 1000];
- 		csvFileName = 'CSV_Sample';
+
+		csvFileName = 'CSV_Sample';
+		
 		return null;
 	}
 

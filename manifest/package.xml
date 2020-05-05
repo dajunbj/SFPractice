@@ -11,6 +11,7 @@
         <members>A01_StoreMonthlySalesControl</members><!--一覧画面のクラス-->
         <members>A01_StoreMonthlySalesCsvControl</members><!--Csv出力クラス-->
         <members>A01_StoreMonthlySalesPdfControl</members><!--Pdf出力クラス-->
+        <members>A01_StoreMonthlySalesBean</members><!--Pdf出力クラス-->
         
         <!--Batch サンプル-->
         <members>A01_DaylySales_Totalization_Bat</members>

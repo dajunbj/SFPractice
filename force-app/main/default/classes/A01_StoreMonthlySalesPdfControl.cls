@@ -11,7 +11,7 @@ public class A01_StoreMonthlySalesPdfControl {
 	public string filename { get; set; }
 
 	public Pagereference execute() {
-		system.debug('XXXXfunck');
+		
 		string param1 = ApexPages.currentPage().getParameters().get('paramStoreName');
 		//年月
 		string param2 = ApexPages.currentPage().getParameters().get('paramMonth');
