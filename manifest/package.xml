@@ -76,7 +76,7 @@
     <types>
         <members>CaseCommentsRelatedList</members>
         <members>CreateCaseCommentComponent</members>
-        <name>ApexComponent</name>
+        <name>AuraDefinitionBundle</name>
     </types>
 
   <!--
