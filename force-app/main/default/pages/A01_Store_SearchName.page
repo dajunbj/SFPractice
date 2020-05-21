@@ -1,9 +1,36 @@
 <apex:page controller="A01_Store_SearchNameController">
-    <script type="text/javascript" charset="utf-8">
-        function sayHello() {
+    <apex:form id="frm">
 
+        <body onLoad="focusWin();" onBlur="focusWin();">
+            <p>親画面から受け取ったパラメータ</p>
+            <ul>
+                <li>{!param1}</li>
+                <li>{!param2}</li>
+            </ul>
+            <apex:commandButton value="閉じる" onclick="closePopup();" />
+        </body>
+    </apex:form>
+    <script type="text/javascript">
+        // 小画面を閉じてパラメータを渡す
+        function closePopup() {
+            var paramKo1 = '67890';
+            var paramKo2 = 'いいいいい';
+
+            // 親画面のfunctionを実行
+            window.opener.getParamFromPopup(paramKo1, paramKo2);
+
+            // 小画面を閉じる
+            window.close();
         }
 
+        var prevElem;
+        function focusWin() {
+            if (document.activeElement != prevElem) {
+                prevElem = document.activeElement;
+            } else {
+                window.focus();
+            }
+        }
 
     </script>
 </apex:page>

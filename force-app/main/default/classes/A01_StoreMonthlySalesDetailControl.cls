@@ -10,7 +10,7 @@ public class A01_StoreMonthlySalesDetailControl {
 	public list<A01_DaylySales__c> searchResultList { get; set; }
 	public A01_StoreMonthlySalesDetailControl() {
 		selStoreName =(string) ApexPages.currentPage().getParameters().get('inputStoreName');
-		selMonthly = ApexPages.currentPage().getParameters().get('inputMonthly');
+		//selMonthly = ApexPages.currentPage().getParameters().get('inputMonthly');
 
 		string sql = 'select Id, StoreR__r.StoreName__c,' +
 		'Day__c,' +
@@ -21,8 +21,8 @@ public class A01_StoreMonthlySalesDetailControl {
 		'CostSalary__c,' +
 		'CostRental__c ' +
 		'from A01_DaylySales__c ' +
-		'where StoreR__r.StoreName__c = \'' + selStoreName + '\'' +
-		' and Day__c like \'' + selMonthly + '%\'';
+		'where StoreR__r.StoreName__c = \'' + selStoreName + '\''; //+
+		//' and Day__c like \'' + selMonthly + '%\'';
 		system.debug('XXXXX' + sql);
 		searchResultList = Database.query(sql);
 

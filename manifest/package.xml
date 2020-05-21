@@ -38,6 +38,8 @@
         <!-- Trigger 日次売上の合計トリガー -->
         <members>A01_DaylySales_Totaling</members>
         
+        <!--メールの分析-->
+        <members>SurveillanceContact</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -65,16 +67,19 @@
         <members>A01_MonthlySales__c</members>
         <members>A01_DaylySales__c</members>
         <members>A01_Prefecture__c</members>
+        
+        <members>ReceivedFax__c</members><!--メール受信後の分析結果-->
         <name>CustomObject</name>  
     </types>
 
-    <!--
+  
     <types>
-        <members>*</members>
+        <members>CaseCommentsRelatedList</members>
+        <members>CreateCaseCommentComponent</members>
         <name>ApexComponent</name>
     </types>
 
-
+  <!--
     <types>
         <members>*</members>
         <name>ApexTestSuite</name>

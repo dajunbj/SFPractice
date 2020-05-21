@@ -4,6 +4,10 @@ public with sharing class A01_StoreMonthlySalesControl {
 	}
 	//販売店名
 	public string inputStoreName { get; set; }
+	
+	//販売店ID
+	public string outputStoreId { get; set; }
+
 	//年月日
 	public string inputMonth { get; set; }
 
@@ -163,4 +167,5 @@ public with sharing class A01_StoreMonthlySalesControl {
 
 		return '?paramStoreName=' + urlStoreName + '&paramMonth=' + urlMonth + '&paramStatus=' + urlStatus;
 	}
+
 }

@@ -10,6 +10,40 @@
             width: 100px;
         }
     </style>
+
+    <script type='text/javascript'>
+        var subWin;
+        function openChildWin() {
+            var param1 = '12345';
+            var param2 = 'あああああ';
+
+            // URLにパラメータを付与
+            var url = '/apex/A01_Store_SearchName'
+            url += '?param1=' + param1;
+            url += '＆param2=' + param2;
+            subWin = window.open(url, '_blank', "width=500,height=400");
+            subWin.blur();
+            subWin.focus();
+        }
+
+        // 小画面からパラメータを受け取る
+        function getParamFromPopup(paramKo1, paramKo2) {
+
+            document.getElementById("j_id0:formMain:j_id3:inputStoreName").value = paramKo2;
+            document.getElementById("j_id0:formMain:j_id3:outputStoreId").value = paramKo1;
+
+        }
+
+        function popupClose() {
+            window.opener.message();
+            window.close();
+            return false;
+        }
+
+        //window.addEventListener('message', childWindowClosed, false);
+
+    </script>
+
     <apex:form id="formMain">
         <div>
             <div>
@@ -17,6 +51,8 @@
                     <div class="header-cls">
                         <apex:outputLabel value="店名" />
                         <apex:inputText id="inputStoreName" value="{!inputStoreName}" />
+                        <apex:commandButton value="店名" onclick="openChildWin();" />
+                        <apex:outputText id="outputStoreId" value="{!outputStoreId}" />
                         <br/>
                         <apex:outputLabel value="年月" />
                         <apex:inputText id="inputMonth" value="{!inputMonth}" />
@@ -39,7 +75,7 @@
             </div>
             <div class="header-cls">
                 <apex:pageblock title="検索結果">
-                    <apex:pageblockbuttons>
+                    <apex:pageblockbuttons >
                         <apex:commandButton action="{!first}" value="最初" rendered="{!ssc.HasPrevious}" />
                         <apex:commandButton action="{!previous}" value="前" rendered="{!ssc.HasPrevious}" /> {!ssc.PageNumber}/{!totalpage}頁数/総頁数
                         <apex:commandButton action="{!next}" value="後" rendered="{!ssc.HasNext}" />
