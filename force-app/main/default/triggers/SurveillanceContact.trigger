@@ -1,6 +1,6 @@
 trigger SurveillanceContact on Task (after insert,after update) {
 
-
+/*
     if (Trigger.isAfter) {
         list<Task> tkList = trigger.new;
         //newTask.Subject
@@ -15,4 +15,5 @@ trigger SurveillanceContact on Task (after insert,after update) {
         faxObj.Name = title;
         insert faxObj;
     }
+    */
 }

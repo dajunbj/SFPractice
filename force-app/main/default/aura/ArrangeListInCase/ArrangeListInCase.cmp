@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickAction"
+    access="global" controller="ArrangeListInCaseController">
+    <!--初期化Action-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--<aura:handler event="force:Toast" action="{!c.doInit}" />-->
+
+    <!--ComponentのAttributes-->
+    <aura:attribute name="columnList" type="List" />
+    <aura:attribute name="dataList" type="Arrange__c[]" />
+
+    <div>
+
+        <lightning:card title="手配">
+            <div>
+                <lightning:datatable id="arrageListTable" keyField="Id" data="{!v.dataList}" columns="{!v.columnList}"
+                    hideCheckboxColumn="false" minColumnWidth="100px">
+                </lightning:datatable>
+            </div>
+        </lightning:card>
+
+    </div>
+</aura:component>

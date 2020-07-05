@@ -27,10 +27,16 @@
         <members>A01_Exception_Sample_Controller</members>
         <members>A01_Exception_Sample_ControllerTest</members>
 
+        <!--メールサービス-->
+        <members>MailHandler</members>
+
         <!--親子関係のオブジェクト例-->
         <members>AnimalCls</members>
         <members>DogCls</members>
         <members>DogTestCls</members>
+
+        <!--手配一覧Component画面(問合せ/案件画面の子Component)-->
+        <members>ArrangeListInCaseController</members>
 
         <name>ApexClass</name>
     </types>
@@ -74,8 +80,12 @@
 
   
     <types>
+        <!--★★★Component★★★-->
         <members>CaseCommentsRelatedList</members>
         <members>CreateCaseCommentComponent</members>
+        <members>WidgetRecordEdit</members>
+        <members>ArrangeListInCase</members><!--問合せ/案件画面に手配のリストを表示する-->
+        
         <name>AuraDefinitionBundle</name>
     </types>
 
